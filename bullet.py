@@ -20,7 +20,7 @@ class Bullet(turtle.Turtle):
                 if self.distance(j.position()) < 40:
                     return check_pos.index(j)
                 else:
-                    self.forward(16)
+                    self.forward(20)
 
     def delete_me(self):
 

@@ -1,10 +1,14 @@
 from turtle import *
 from bullet import Bullet
 from obstacles import Obstacles
+from score_board import Points
 
 player=Turtle()
 screen=Screen()
+screen.setup(width=800,height=750)
 screen.listen()
+
+score=Points()
 
 obstacles_objects=[]
 
@@ -16,7 +20,7 @@ def setup():
     player.speed(0)
     player.shape("turtle")
     player.turtlesize(3, 3,3)
-    player.goto(x=0,y=-290)
+    player.goto(x=0,y=-300)
     player.setheading(90)
     player.speed(6)
     player.showturtle()
@@ -34,6 +38,7 @@ def shoot():
         ball.delete_me()
         obstacles_objects[value].delete_me()
         obstacles_objects.pop(value)
+        score.increment()
         ob = Obstacles()
         obstacles_objects.append(ob)
 
